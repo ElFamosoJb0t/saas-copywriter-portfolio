@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How Retainly Cut Churn 34% With Automated Onboarding</title>
+    <meta name="description" content="Retainly reduced SaaS churn by 34% using automated onboarding. Learn the exact playbook: triggers, sequences, and metrics that turned new signups into loyal customers.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="#">
+    <meta property="og:title" content="How Retainly Cut Churn 34% With Automated Onboarding">
+    <meta property="og:description" content="The exact playbook behind a 34% churn reduction — automated onboarding sequences, behavioral triggers, and the metrics that matter.">
+    <meta property="og:type" content="article">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300..700;1,9..40,300..700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --ink: #1a1a1a;
+            --ink-light: #4a4a4a;
+            --ink-muted: #7a7a7a;
+            --surface: #faf9f7;
+            --surface-warm: #f3f0eb;
+            --accent: #c7402d;
+            --accent-soft: #fdf0ee;
+            --border: #e5e0d8;
+            --highlight: #2d6bc7;
+            --serif: 'Instrument Serif', Georgia, serif;
+            --sans: 'DM Sans', -apple-system, sans-serif;
+            --mono: 'JetBrains Mono', monospace;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html { font-size: 18px; scroll-behavior: smooth; }
+
+        body {
+            font-family: var(--sans);
+            color: var(--ink);
+            background: var(--surface);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* — NAV BAR — */
+        .nav {
+            position: sticky; top: 0; z-index: 100;
+            background: rgba(250, 249, 247, 0.92);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            padding: 0.8rem 2rem;
+            display: flex; align-items: center; justify-content: space-between;
+        }
+        .nav-logo {
+            font-family: var(--sans);
+            font-weight: 700; font-size: 1.1rem;
+            color: var(--accent);
+            letter-spacing: -0.02em;
+            text-decoration: none;
+        }
+        .nav-logo span { color: var(--ink); }
+        .nav-links { display: flex; gap: 1.5rem; align-items: center; }
+        .nav-links a {
+            font-size: 0.78rem; font-weight: 500;
+            color: var(--ink-light); text-decoration: none;
+            letter-spacing: 0.03em; text-transform: uppercase;
+        }
+        .nav-links a:hover { color: var(--accent); }
+        .nav-cta {
+            background: var(--accent) !important; color: #fff !important;
+            padding: 0.45rem 1rem; border-radius: 6px;
+            font-size: 0.78rem !important; font-weight: 600 !important;
+            transition: background 0.2s;
+        }
+        .nav-cta:hover { background: #a8341f !important; }
+
+        /* — HERO — */
+        .hero {
+            max-width: 780px; margin: 0 auto;
+            padding: 4rem 2rem 3rem;
+        }
+        .hero-tag {
+            display: inline-block;
+            font-size: 0.72rem; font-weight: 600;
+            text-transform: uppercase; letter-spacing: 0.08em;
+            color: var(--accent); background: var(--accent-soft);
+            padding: 0.3rem 0.8rem; border-radius: 4px;
+            margin-bottom: 1.5rem;
+        }
+        h1 {
+            font-family: var(--serif);
+            font-size: clamp(2.2rem, 5vw, 3.2rem);
+            line-height: 1.15; font-weight: 400;
+            color: var(--ink); margin-bottom: 1.5rem;
+            letter-spacing: -0.02em;
+        }
+        h1 em { font-style: italic; color: var(--accent); }
+        .hero-meta {
+            display: flex; align-items: center; gap: 1rem;
+            font-size: 0.8rem; color: var(--ink-muted);
+            padding-top: 1rem; border-top: 1px solid var(--border);
+        }
+        .hero-meta .dot { width: 3px; height: 3px; background: var(--ink-muted); border-radius: 50%; }
+
+        /* — ARTICLE BODY — */
+        .article {
+            max-width: 680px; margin: 0 auto;
+            padding: 0 2rem 4rem;
+        }
+        .article p {
+            margin-bottom: 1.4rem;
+            color: var(--ink-light);
+            font-size: 1rem;
+        }
+        .article p:first-of-type::first-line {
+            color: var(--ink);
+            font-weight: 500;
+        }
+        .lead {
+            font-size: 1.15rem !important;
+            color: var(--ink) !important;
+            line-height: 1.75;
+        }
+        h2 {
+            font-family: var(--serif);
+            font-size: 1.75rem; font-weight: 400;
+            line-height: 1.25; color: var(--ink);
+            margin: 3rem 0 1.2rem;
+            letter-spacing: -0.01em;
+        }
+        h3 {
+            font-family: var(--sans);
+            font-size: 1.05rem; font-weight: 600;
+            color: var(--ink); margin: 2rem 0 0.8rem;
+        }
+        strong { color: var(--ink); font-weight: 600; }
+        a { color: var(--highlight); text-decoration: underline; text-underline-offset: 2px; }
+
+        /* — CALLOUT BOX — */
+        .callout {
+            background: var(--surface-warm);
+            border-left: 3px solid var(--accent);
+            padding: 1.3rem 1.5rem;
+            margin: 2rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .callout p { margin-bottom: 0.5rem; font-size: 0.92rem; }
+        .callout p:last-child { margin-bottom: 0; }
+        .callout-label {
+            font-size: 0.72rem; font-weight: 700;
+            text-transform: uppercase; letter-spacing: 0.06em;
+            color: var(--accent); margin-bottom: 0.5rem;
+        }
+
+        /* — STAT BLOCK — */
+        .stat-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1rem; margin: 2rem 0;
+        }
+        .stat-card {
+            text-align: center;
+            padding: 1.5rem 1rem;
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+        }
+        .stat-number {
+            font-family: var(--mono);
+            font-size: 2rem; font-weight: 500;
+            color: var(--accent);
+            line-height: 1;
+        }
+        .stat-label {
+            font-size: 0.78rem; color: var(--ink-muted);
+            margin-top: 0.4rem; line-height: 1.4;
+        }
+
+        /* — TABLE — */
+        .table-wrap {
+            overflow-x: auto; margin: 2rem 0;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+        }
+        table {
+            width: 100%; border-collapse: collapse;
+            font-size: 0.88rem;
+        }
+        thead { background: var(--surface-warm); }
+        th {
+            text-align: left; padding: 0.8rem 1rem;
+            font-weight: 600; font-size: 0.76rem;
+            text-transform: uppercase; letter-spacing: 0.04em;
+            color: var(--ink-muted); border-bottom: 1px solid var(--border);
+        }
+        td {
+            padding: 0.75rem 1rem;
+            border-bottom: 1px solid var(--border);
+            color: var(--ink-light);
+        }
+        tr:last-child td { border-bottom: none; }
+        tbody tr:hover { background: var(--accent-soft); }
+
+        /* — LISTS — */
+        .article ul, .article ol {
+            margin: 1rem 0 1.5rem 1.2rem;
+            color: var(--ink-light);
+        }
+        .article li {
+            margin-bottom: 0.6rem;
+            padding-left: 0.3rem;
+            font-size: 0.95rem;
+        }
+
+        /* — CTA SECTION — */
+        .cta-section {
+            background: var(--ink);
+            color: #fff;
+            padding: 3rem 2.5rem;
+            border-radius: 14px;
+            margin: 3rem 0 2rem;
+            text-align: center;
+        }
+        .cta-section h2 {
+            color: #fff; font-size: 1.6rem; margin: 0 0 0.8rem;
+        }
+        .cta-section p {
+            color: rgba(255,255,255,0.7);
+            max-width: 480px; margin: 0 auto 1.5rem;
+            font-size: 0.95rem;
+        }
+        .cta-btn {
+            display: inline-block;
+            background: var(--accent); color: #fff;
+            padding: 0.85rem 2rem; border-radius: 8px;
+            font-weight: 600; font-size: 0.95rem;
+            text-decoration: none;
+            transition: transform 0.2s, background 0.2s;
+        }
+        .cta-btn:hover { background: #d94a36; transform: translateY(-1px); color: #fff; }
+        .cta-sub {
+            font-size: 0.75rem; color: rgba(255,255,255,0.45);
+            margin-top: 0.8rem;
+        }
+
+        /* — FOOTER — */
+        footer {
+            max-width: 680px; margin: 0 auto;
+            padding: 2rem; border-top: 1px solid var(--border);
+            font-size: 0.78rem; color: var(--ink-muted);
+            text-align: center;
+        }
+
+        /* — RESPONSIVE — */
+        @media (max-width: 640px) {
+            html { font-size: 16px; }
+            .hero { padding: 2.5rem 1.2rem 2rem; }
+            .article { padding: 0 1.2rem 3rem; }
+            .nav-links a:not(.nav-cta) { display: none; }
+            .stat-row { grid-template-columns: 1fr; }
+            .cta-section { padding: 2rem 1.5rem; }
+        }
+
+        /* — SUBTLE ANIMATIONS — */
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(16px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .hero, .article { animation: fadeUp 0.6s ease-out; }
+    </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+    <a href="#" class="nav-logo">Retainly<span> Blog</span></a>
+    <div class="nav-links">
+        <a href="#">Product</a>
+        <a href="#">Customers</a>
+        <a href="#">Pricing</a>
+        <a href="#" class="nav-cta">Start Free Trial</a>
+    </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+    <span class="hero-tag">Case Study — Customer Success</span>
+    <h1>How Retainly Cut Churn by 34% With <em>Automated Onboarding</em></h1>
+    <div class="hero-meta">
+        <span>Retainly Team</span>
+        <span class="dot"></span>
+        <span>10 min read</span>
+        <span class="dot"></span>
+        <span>March 2026</span>
+    </div>
+</header>
+
+<!-- ARTICLE -->
+<article class="article">
+
+    <p class="lead">The average B2B SaaS company loses 35% of its customer base every year. That's not a rounding error — it's a business model slowly bleeding out. And the root cause, in most cases, isn't a bad product. It's a bad first week.</p>
+
+    <p>When we dug into Retainly's own data last year, the pattern was painfully clear: 70% of churned accounts had never completed onboarding. They signed up, poked around for a day or two, and disappeared. The product worked. The users just never got far enough to see it.</p>
+
+    <p>So we rebuilt onboarding from scratch — not as a feature tour, but as an automated system designed to <strong>reduce SaaS churn</strong> at the source. Six months later, churn dropped 34%. Here's exactly how we did it, with every trigger, sequence, and metric you can steal for your own stack.</p>
+
+    <!-- SECTION 1 -->
+    <h2>Why Onboarding Is the Highest-Leverage Churn Fix</h2>
+
+    <p>Most retention strategies focus on saving customers who are already leaving. Win-back emails. Discount offers. Exit surveys. It's expensive, reactive, and too late. The data tells a different story about where churn actually starts.</p>
+
+    <div class="stat-row">
+        <div class="stat-card">
+            <div class="stat-number">70%</div>
+            <div class="stat-label">of churn happens within<br>the first 90 days</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">20%+</div>
+            <div class="stat-label">of voluntary churn<br>tied to poor onboarding</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">50%</div>
+            <div class="stat-label">lower churn when<br>TTV is under 7 days</div>
+        </div>
+    </div>
+
+    <p>Structured onboarding programs improve first-year retention by roughly 25%. That's not incremental — it's the difference between a company that compounds and one that's stuck replacing lost revenue every quarter.</p>
+
+    <p>The insight we acted on: <strong>customer onboarding automation</strong> isn't about sending more emails. It's about compressing the time between "I signed up" and "I can't live without this." Every hour you shave off that window is money kept.</p>
+
+    <!-- SECTION 2 -->
+    <h2>The 5-Stage Automated Onboarding System</h2>
+
+    <p>Before automation, Retainly's onboarding was a 14-step checklist and a "welcome" email. Completion rate: 23%. We replaced it with a behavioral system that adapts to what users actually do — not what we hope they'll do.</p>
+
+    <h3>Stage 1: Instant Value (Minutes 0–10)</h3>
+    <p>The moment a user signs up, they hit a single-screen setup wizard that asks two questions: <em>What's your primary goal?</em> and <em>How large is your team?</em> Based on answers, we generate a pre-configured workspace with sample data. No empty dashboards. No blank screens. The user sees what "done" looks like before they start.</p>
+
+    <h3>Stage 2: First Win Trigger (Hours 1–24)</h3>
+    <p>We identified one action that correlates with 90-day retention: creating a customer health score. Users who complete this step within 24 hours retain at 4x the rate of those who don't. The entire automated onboarding flow is designed to push users toward this single milestone — through in-app nudges, a contextual tooltip, and one precisely-timed email.</p>
+
+    <h3>Stage 3: Activation Loop (Days 2–7)</h3>
+    <p>Once the first win is locked in, behavioral triggers take over. Each completed action unlocks the next relevant feature — not all features at once. If a user sets up health scores but hasn't connected their CRM, they get a specific prompt showing the benefit: <em>"Companies that connect their CRM see churn alerts 6 days earlier."</em></p>
+
+    <h3>Stage 4: Social Proof Injection (Day 5)</h3>
+    <p>On day five, if a user has completed at least three activation steps, they receive a case study email from a company in their industry. If they haven't reached three steps, they get a "quick start" email with a 10-minute setup video instead. Same trigger point, different content — based entirely on behavior.</p>
+
+    <h3>Stage 5: Human Touchpoint (Day 7–10)</h3>
+    <p>Automation doesn't mean zero human contact. On day seven, high-potential accounts (based on company size and engagement score) get a personal email from a Customer Success Manager. Not a template with a mail merge — a real, two-sentence note referencing what they've built so far. Low-engagement accounts get an automated re-engagement sequence instead.</p>
+
+    <div class="callout">
+        <div class="callout-label">Key Principle</div>
+        <p><strong>Automated onboarding doesn't replace human interaction — it tells you where human interaction matters most.</strong> Our CSMs went from spending 80% of their time on manual check-ins to focusing exclusively on accounts that data flagged as high-value or at-risk.</p>
+    </div>
+
+    <!-- SECTION 3 -->
+    <h2>Before vs. After: The Numbers</h2>
+
+    <p>We ran the new onboarding system alongside the old one for 60 days with a 50/50 split. No ambiguity in the results.</p>
+
+    <div class="table-wrap">
+        <table>
+            <thead>
+                <tr>
+                    <th>Metric</th>
+                    <th>Before (Manual)</th>
+                    <th>After (Automated)</th>
+                    <th>Change</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Onboarding completion</strong></td>
+                    <td>23%</td>
+                    <td>61%</td>
+                    <td style="color: var(--accent); font-weight: 600;">+165%</td>
+                </tr>
+                <tr>
+                    <td><strong>Time-to-first-value</strong></td>
+                    <td>11 days</td>
+                    <td>3.2 days</td>
+                    <td style="color: var(--accent); font-weight: 600;">-71%</td>
+                </tr>
+                <tr>
+                    <td><strong>90-day retention</strong></td>
+                    <td>54%</td>
+                    <td>78%</td>
+                    <td style="color: var(--accent); font-weight: 600;">+44%</td>
+                </tr>
+                <tr>
+                    <td><strong>Monthly churn rate</strong></td>
+                    <td>5.8%</td>
+                    <td>3.8%</td>
+                    <td style="color: var(--accent); font-weight: 600;">-34%</td>
+                </tr>
+                <tr>
+                    <td><strong>Trial-to-paid conversion</strong></td>
+                    <td>12%</td>
+                    <td>19%</td>
+                    <td style="color: var(--accent); font-weight: 600;">+58%</td>
+                </tr>
+                <tr>
+                    <td><strong>Support tickets (first 30 days)</strong></td>
+                    <td>4.2 per user</td>
+                    <td>1.8 per user</td>
+                    <td style="color: var(--accent); font-weight: 600;">-57%</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <p>The churn reduction alone — from 5.8% to 3.8% monthly — translates to roughly $420K in preserved ARR for a company at Retainly's scale. And the trial-to-paid uplift effectively reduced customer acquisition costs by accelerating payback period from 14 months to 9.</p>
+
+    <!-- SECTION 4 -->
+    <h2>The 4 Triggers That Did the Heavy Lifting</h2>
+
+    <p>Not all automated onboarding tactics contributed equally. Four behavioral triggers drove the majority of impact. If you're building your own system, start here.</p>
+
+    <h3>1. The "Stalled User" Trigger</h3>
+    <p>If a user logs in but doesn't complete an action within 15 minutes, they get a contextual in-app message offering guided setup. This single trigger recovered 18% of users who would have otherwise abandoned their session. Most SaaS products wait until the user leaves to send a "come back" email. By then, they've mentally checked out.</p>
+
+    <h3>2. The "Almost There" Trigger</h3>
+    <p>Users who complete 2 out of 3 activation milestones within 48 hours get a personalized push to finish the last one. The message includes their specific progress: <em>"You've set up health scores and connected your CRM — connect Slack to get real-time alerts."</em> Specificity outperformed generic reminders by 3x in click-through rate.</p>
+
+    <h3>3. The "Power User Preview" Trigger</h3>
+    <p>When a user finishes core setup, instead of a congratulations screen, we show a 30-second preview of what the product does with three months of data — churn predictions, revenue forecasts, risk alerts. It reframes the product from "tool I'm setting up" to "intelligence I'll depend on." This is where <strong>time-to-value</strong> compresses the most.</p>
+
+    <h3>4. The "Team Invite" Trigger</h3>
+    <p>Users who add at least one teammate within the first week have 73% higher 6-month retention. So on day three, after the first win, we prompt a team invite with a pre-written message. Making collaboration effortless — not just possible — turned single-user trials into team-wide adoption.</p>
+
+    <!-- SECTION 5 -->
+    <h2>What We'd Do Differently (Mistakes Included)</h2>
+
+    <p>This wasn't a clean, linear success story. Three things we got wrong before we got them right:</p>
+
+    <p><strong>Mistake #1: Too many emails, too fast.</strong> The first version of our automated sequence sent five emails in five days. Open rates cratered by email three. We cut it to three emails in seven days, with in-app messages carrying the rest of the load. Email is for pulling users back in. In-app is for guiding them once they're there.</p>
+
+    <p><strong>Mistake #2: Measuring completion, not activation.</strong> We originally optimized for "checklist completed." But completing steps and actually getting value are different things. A user can import contacts without ever segmenting them. We shifted to measuring <em>activation events</em> — actions that directly correlate with retention — which changed how we designed every step.</p>
+
+    <p><strong>Mistake #3: Ignoring the "day 30 cliff."</strong> We over-invested in the first week and ignored what happened next. Users who survived onboarding but didn't form a usage habit by day 30 still churned at high rates. We added a second automated sequence — a "habit formation" loop between days 14 and 30 — that reduced month-two churn by an additional 12%.</p>
+
+    <!-- SECTION 6 -->
+    <h2>How to Build This for Your Product</h2>
+
+    <p>You don't need Retainly's stack to replicate this. The framework works regardless of your tools. Here's the simplified playbook:</p>
+
+    <ol>
+        <li><strong>Identify your "first win" metric.</strong> Find the single action most correlated with 90-day retention. Not the action you wish users would take — the one that statistically predicts they'll stay. Query your data: what did retained users do in week one that churned users didn't?</li>
+        <li><strong>Map the minimum path to that win.</strong> Strip everything else. If it takes more than three steps to reach the first win, your onboarding has too much friction. Each additional step before value is a point where users drop off.</li>
+        <li><strong>Build behavioral triggers, not time-based drips.</strong> "Send email on day 3" is a calendar. "Send email when user stalls after step 2" is an onboarding system. The difference in conversion is typically 2–4x.</li>
+        <li><strong>Segment from minute one.</strong> Ask one or two questions at signup and branch the entire experience. A marketing manager and a CTO need to see different things first. Personalized onboarding paths improve day-30 retention by up to 52%.</li>
+        <li><strong>Measure activation, not completion.</strong> Track whether users performed high-retention actions, not whether they clicked through your tour. Redesign around the actions that predict revenue.</li>
+    </ol>
+
+    <div class="callout">
+        <div class="callout-label">Industry Benchmark</div>
+        <p>The median B2B SaaS company has a time-to-first-value of about 1.5 days. Best-in-class companies get it under 7 days for complex products. If your TTV exceeds two weeks, onboarding is almost certainly your biggest churn driver — and your biggest growth opportunity.</p>
+    </div>
+
+    <!-- CTA -->
+    <div class="cta-section">
+        <h2>Stop Losing Customers in Week One</h2>
+        <p>Retainly automates the entire post-signup journey — from behavioral triggers to health scores — so your team focuses on growth, not firefighting.</p>
+        <a href="#" class="cta-btn">Start Your Free Trial →</a>
+        <div class="cta-sub">14-day trial · No credit card · Setup in 10 minutes</div>
+    </div>
+
+    <p style="margin-top: 2rem;">Reducing SaaS churn isn't about building a better mousetrap for users who are already leaving. It's about making the first seven days so useful, so frictionless, and so clearly valuable that leaving never crosses their mind. Automated onboarding is the infrastructure that makes that possible — not someday, but starting with the next user who signs up.</p>
+
+</article>
+
+<footer>
+    <span style="display:inline-block;background:#fdf0ee;border:1px solid #c7402d;color:#c7402d;font-size:0.72rem;font-weight:600;padding:0.3rem 0.8rem;border-radius:5px;margin-bottom:0.5rem;">Portfolio Sample</span><br>
+    &copy; 2026 Retainly &middot; Customer Retention Platform for B2B SaaS<br>
+    <span style="margin-top: 0.5rem; display: inline-block; font-style: italic;">
+        Written as a portfolio sample &middot; <a href="index.html" style="color:#7a7a7a;text-decoration:underline;text-underline-offset:2px;">Back to Portfolio &rarr;</a>
+    </span>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SaaS Copywriter | SEO Blog Posts, Email Sequences & Landing Pages</title>
+    <meta name="description" content="I write SEO blog posts, email sequences, and landing pages that help B2B SaaS companies grow organic traffic and turn visitors into paying customers.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300..700;1,9..40,300..700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --ink: #1a1a1a;
+            --ink-light: #4a4a4a;
+            --ink-muted: #7a7a7a;
+            --surface: #faf9f7;
+            --surface-warm: #f3f0eb;
+            --accent: #1a365d;
+            --accent-light: #2d6bc7;
+            --accent-soft: #eef3fb;
+            --border: #e5e0d8;
+            --green: #2a9d6e;
+            --green-soft: #edf8f3;
+            --serif: 'Instrument Serif', Georgia, serif;
+            --sans: 'DM Sans', -apple-system, sans-serif;
+            --mono: 'JetBrains Mono', monospace;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { font-size: 18px; scroll-behavior: smooth; }
+        body {
+            font-family: var(--sans);
+            color: var(--ink);
+            background: var(--surface);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* — NAV — */
+        .nav {
+            position: sticky; top: 0; z-index: 100;
+            background: rgba(250, 249, 247, 0.92);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            padding: 0.8rem 2rem;
+            display: flex; align-items: center; justify-content: space-between;
+            max-width: 100%;
+        }
+        .nav-logo {
+            font-family: var(--sans); font-weight: 700; font-size: 1.1rem;
+            color: var(--ink); letter-spacing: -0.02em; text-decoration: none;
+        }
+        .nav-logo span { color: var(--accent-light); }
+        .nav-links { display: flex; gap: 1.5rem; align-items: center; }
+        .nav-links a {
+            font-size: 0.78rem; font-weight: 500;
+            color: var(--ink-light); text-decoration: none;
+            letter-spacing: 0.03em; text-transform: uppercase;
+            transition: color 0.2s;
+        }
+        .nav-links a:hover { color: var(--accent-light); }
+        .nav-cta {
+            background: var(--accent) !important; color: #fff !important;
+            padding: 0.45rem 1rem; border-radius: 6px;
+            font-size: 0.78rem !important; font-weight: 600 !important;
+            transition: background 0.2s;
+        }
+        .nav-cta:hover { background: var(--accent-light) !important; }
+
+        /* — HERO — */
+        .hero {
+            max-width: 820px; margin: 0 auto;
+            padding: 5rem 2rem 4rem;
+            text-align: center;
+        }
+        .hero-tag {
+            display: inline-block;
+            font-size: 0.72rem; font-weight: 600;
+            text-transform: uppercase; letter-spacing: 0.08em;
+            color: var(--accent-light); background: var(--accent-soft);
+            padding: 0.3rem 0.8rem; border-radius: 4px;
+            margin-bottom: 1.5rem;
+        }
+        h1 {
+            font-family: var(--serif);
+            font-size: clamp(2.4rem, 5vw, 3.4rem);
+            line-height: 1.12; font-weight: 400;
+            color: var(--ink); margin-bottom: 1.5rem;
+            letter-spacing: -0.02em;
+        }
+        h1 em { font-style: italic; color: var(--accent-light); }
+        .hero-sub {
+            font-size: 1.1rem; color: var(--ink-light);
+            max-width: 600px; margin: 0 auto 2rem;
+            line-height: 1.7;
+        }
+        .hero-cta {
+            display: inline-block;
+            background: var(--accent); color: #fff;
+            padding: 0.85rem 2rem; border-radius: 8px;
+            font-weight: 600; font-size: 0.95rem;
+            text-decoration: none;
+            transition: transform 0.2s, background 0.2s;
+        }
+        .hero-cta:hover { background: var(--accent-light); transform: translateY(-1px); }
+        .hero-proof {
+            margin-top: 1.5rem;
+            font-size: 0.78rem; color: var(--ink-muted);
+        }
+
+        /* — SECTIONS — */
+        section { padding: 4rem 2rem; }
+        .section-inner { max-width: 900px; margin: 0 auto; }
+        .section-tag {
+            display: inline-block;
+            font-size: 0.68rem; font-weight: 700;
+            text-transform: uppercase; letter-spacing: 0.08em;
+            color: var(--accent-light);
+            margin-bottom: 0.8rem;
+        }
+        h2 {
+            font-family: var(--serif);
+            font-size: 2rem; font-weight: 400;
+            line-height: 1.2; color: var(--ink);
+            margin-bottom: 1rem;
+            letter-spacing: -0.01em;
+        }
+        h2 em { font-style: italic; color: var(--accent-light); }
+        .section-lead {
+            font-size: 1.05rem; color: var(--ink-light);
+            max-width: 620px; margin-bottom: 2.5rem;
+            line-height: 1.7;
+        }
+
+        /* — PAIN POINTS — */
+        .pain-section { background: var(--surface-warm); }
+        .pain-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1rem; margin-bottom: 2rem;
+        }
+        .pain-card {
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 1.3rem 1.5rem;
+        }
+        .pain-card p {
+            font-size: 0.92rem; color: var(--ink-light);
+            line-height: 1.6;
+        }
+        .pain-card .pain-icon {
+            font-size: 1.2rem; margin-bottom: 0.5rem;
+        }
+        .pain-punchline {
+            font-family: var(--serif);
+            font-size: 1.3rem;
+            color: var(--ink);
+            font-style: italic;
+            text-align: center;
+            margin-top: 1rem;
+        }
+
+        /* — SERVICES — */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.2rem;
+        }
+        .service-card {
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.8rem;
+            transition: box-shadow 0.2s, transform 0.2s;
+        }
+        .service-card:hover {
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            transform: translateY(-2px);
+        }
+        .service-icon {
+            width: 44px; height: 44px;
+            background: var(--accent-soft);
+            border-radius: 10px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.2rem; margin-bottom: 1rem;
+        }
+        .service-card h3 {
+            font-family: var(--sans);
+            font-size: 1.05rem; font-weight: 600;
+            color: var(--ink); margin-bottom: 0.5rem;
+        }
+        .service-card p {
+            font-size: 0.88rem; color: var(--ink-light);
+            line-height: 1.6; margin-bottom: 0.8rem;
+        }
+        .service-price {
+            font-family: var(--mono);
+            font-size: 0.82rem; font-weight: 500;
+            color: var(--accent-light);
+        }
+
+        /* — PORTFOLIO — */
+        .portfolio-section { background: var(--surface-warm); }
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.2rem;
+        }
+        .portfolio-card {
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: box-shadow 0.2s, transform 0.2s;
+            text-decoration: none; color: inherit;
+            display: block;
+        }
+        .portfolio-card:hover {
+            box-shadow: 0 6px 24px rgba(0,0,0,0.08);
+            transform: translateY(-3px);
+        }
+        .portfolio-card-top {
+            padding: 1.5rem 1.5rem 0;
+        }
+        .portfolio-type {
+            display: inline-block;
+            font-size: 0.65rem; font-weight: 700;
+            text-transform: uppercase; letter-spacing: 0.06em;
+            padding: 0.2rem 0.6rem; border-radius: 4px;
+            margin-bottom: 0.8rem;
+        }
+        .type-blog { color: #c7402d; background: #fdf0ee; }
+        .type-email { color: #2d6bc7; background: #eef3fb; }
+        .type-landing { color: #2a9d6e; background: #edf8f3; }
+        .portfolio-card h3 {
+            font-family: var(--serif);
+            font-size: 1.15rem; font-weight: 400;
+            line-height: 1.3; color: var(--ink);
+            margin-bottom: 0.5rem;
+        }
+        .portfolio-card-desc {
+            font-size: 0.82rem; color: var(--ink-muted);
+            line-height: 1.5;
+        }
+        .portfolio-card-bottom {
+            padding: 1rem 1.5rem;
+            border-top: 1px solid var(--border);
+            display: flex; align-items: center; justify-content: space-between;
+            margin-top: 1rem;
+        }
+        .portfolio-card-cta {
+            font-size: 0.8rem; font-weight: 600;
+            color: var(--accent-light);
+        }
+        .portfolio-card-meta {
+            font-size: 0.72rem; color: var(--ink-muted);
+        }
+
+        /* — PROCESS — */
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            counter-reset: step;
+        }
+        .process-step {
+            counter-increment: step;
+            position: relative;
+            padding-top: 0.5rem;
+        }
+        .process-step::before {
+            content: counter(step);
+            font-family: var(--mono);
+            font-size: 2.5rem; font-weight: 500;
+            color: var(--accent-soft);
+            line-height: 1;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        .process-step h3 {
+            font-family: var(--sans);
+            font-size: 0.95rem; font-weight: 600;
+            color: var(--ink); margin-bottom: 0.4rem;
+        }
+        .process-step p {
+            font-size: 0.85rem; color: var(--ink-light);
+            line-height: 1.55;
+        }
+
+        /* — ABOUT — */
+        .about-section { background: var(--surface-warm); }
+        .about-content {
+            max-width: 620px;
+        }
+        .about-content p {
+            font-size: 0.95rem; color: var(--ink-light);
+            margin-bottom: 1.2rem; line-height: 1.7;
+        }
+        .about-tags {
+            display: flex; flex-wrap: wrap; gap: 0.5rem;
+            margin-top: 1.5rem;
+        }
+        .about-tag {
+            font-size: 0.72rem; font-weight: 600;
+            color: var(--ink-muted);
+            background: #fff;
+            border: 1px solid var(--border);
+            padding: 0.3rem 0.7rem;
+            border-radius: 5px;
+        }
+
+        /* — CTA FINAL — */
+        .cta-final {
+            background: var(--ink);
+            color: #fff;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+        .cta-final h2 {
+            color: #fff; font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        .cta-final p {
+            color: rgba(255,255,255,0.65);
+            max-width: 500px; margin: 0 auto 2rem;
+            font-size: 0.95rem; line-height: 1.7;
+        }
+        .cta-final-btn {
+            display: inline-block;
+            background: var(--accent-light); color: #fff;
+            padding: 0.85rem 2rem; border-radius: 8px;
+            font-weight: 600; font-size: 0.95rem;
+            text-decoration: none;
+            transition: transform 0.2s, background 0.2s;
+            margin: 0 0.4rem;
+        }
+        .cta-final-btn:hover { background: #3b7de0; transform: translateY(-1px); }
+        .cta-final-btn.secondary {
+            background: transparent;
+            border: 1px solid rgba(255,255,255,0.25);
+        }
+        .cta-final-btn.secondary:hover {
+            background: rgba(255,255,255,0.08);
+            border-color: rgba(255,255,255,0.4);
+        }
+        .cta-final-sub {
+            font-size: 0.75rem; color: rgba(255,255,255,0.35);
+            margin-top: 1rem;
+        }
+
+        /* — FOOTER — */
+        footer {
+            max-width: 900px; margin: 0 auto;
+            padding: 2rem; border-top: 1px solid var(--border);
+            font-size: 0.78rem; color: var(--ink-muted);
+            text-align: center;
+        }
+        footer a { color: var(--ink-muted); text-decoration: none; }
+        footer a:hover { color: var(--accent-light); }
+
+        /* — RESPONSIVE — */
+        @media (max-width: 640px) {
+            html { font-size: 16px; }
+            .hero { padding: 3rem 1.2rem 2.5rem; }
+            section { padding: 3rem 1.2rem; }
+            .nav-links a:not(.nav-cta) { display: none; }
+            .services-grid, .portfolio-grid { grid-template-columns: 1fr; }
+            .process-steps { grid-template-columns: 1fr 1fr; }
+            .pain-grid { grid-template-columns: 1fr; }
+            .cta-final { padding: 3rem 1.2rem; }
+            .cta-final-btn { display: block; margin: 0.5rem auto; max-width: 280px; }
+        }
+
+        /* — ANIMATIONS — */
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .hero { animation: fadeUp 0.6s ease-out; }
+        .fade-in {
+            opacity: 0; transform: translateY(20px);
+            transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+        }
+        .fade-in.visible {
+            opacity: 1; transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+    <a href="#" class="nav-logo">SaaS<span>Copy</span></a>
+    <div class="nav-links">
+        <a href="#services">Services</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#process">Process</a>
+        <a href="#about">About</a>
+        <a href="mailto:hello@example.com" class="nav-cta">Get a Free Audit</a>
+    </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+    <span class="hero-tag">SaaS Copywriter &mdash; B2B Specialist</span>
+    <h1>SaaS Content That Converts Readers <em>Into Users</em></h1>
+    <p class="hero-sub">I write SEO blog posts, email sequences, and landing pages that help B2B SaaS companies grow organic traffic and turn visitors into paying customers.</p>
+    <a href="mailto:hello@example.com" class="hero-cta">Get a Free Content Audit &rarr;</a>
+    <p class="hero-proof">Currently accepting 2&ndash;3 new projects per month</p>
+</header>
+
+<!-- PAIN POINTS -->
+<section class="pain-section" id="pain">
+    <div class="section-inner fade-in">
+        <span class="section-tag">Sound Familiar?</span>
+        <div class="pain-grid">
+            <div class="pain-card">
+                <div class="pain-icon">&#128200;</div>
+                <p>Your blog gets traffic, but nobody signs up for a trial.</p>
+            </div>
+            <div class="pain-card">
+                <div class="pain-icon">&#9993;&#65039;</div>
+                <p>Your email open rates are solid, but click-through is dead.</p>
+            </div>
+            <div class="pain-card">
+                <div class="pain-icon">&#128187;</div>
+                <p>Your landing page looks great, but conversions are below 2%.</p>
+            </div>
+            <div class="pain-card">
+                <div class="pain-icon">&#9200;</div>
+                <p>You know content marketing works&hellip; you just don't have time to do it right.</p>
+            </div>
+        </div>
+        <p class="pain-punchline">You don't need more content. You need content that <em>converts.</em></p>
+    </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+    <div class="section-inner fade-in">
+        <span class="section-tag">What I Do</span>
+        <h2>Three Services. One Goal: <em>Growth.</em></h2>
+        <p class="section-lead">Every piece of content I write is built around one question: does this move the reader closer to becoming a paying user?</p>
+
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">&#128221;</div>
+                <h3>SEO Blog Posts</h3>
+                <p>Long-form, keyword-optimized articles that rank on Google and educate your ideal buyers. Keyword research, meta tags, and a strategic CTA included in every post.</p>
+                <span class="service-price">Starting at $150</span>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">&#9993;&#65039;</div>
+                <h3>Email Sequences</h3>
+                <p>Welcome sequences, nurture flows, and launch campaigns that move subscribers down your funnel. A/B subject lines and segmentation strategy included.</p>
+                <span class="service-price">Starting at $350</span>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">&#127919;</div>
+                <h3>Landing Pages</h3>
+                <p>Conversion-focused copy for feature pages, lead gen pages, and product launches. Wireframe layout + persuasion frameworks (AIDA/PAS) included.</p>
+                <span class="service-price">Starting at $300</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section class="portfolio-section" id="portfolio">
+    <div class="section-inner fade-in">
+        <span class="section-tag">Recent Work</span>
+        <h2>Samples That Show, <em>Not Tell</em></h2>
+        <p class="section-lead">Real examples of the content I create for B2B SaaS companies. Click any sample to read the full piece.</p>
+
+        <div class="portfolio-grid">
+            <a href="retainly-reduce-saas-churn-automated-onboarding.html" class="portfolio-card">
+                <div class="portfolio-card-top">
+                    <span class="portfolio-type type-blog">SEO Blog Post</span>
+                    <h3>How Retainly Cut Churn by 34% With Automated Onboarding</h3>
+                    <p class="portfolio-card-desc">2,000-word case study for a customer success SaaS. Keyword-optimized, data-driven, with conversion-focused CTAs.</p>
+                </div>
+                <div class="portfolio-card-bottom">
+                    <span class="portfolio-card-cta">Read Sample &rarr;</span>
+                    <span class="portfolio-card-meta">B2B SaaS &middot; Customer Success</span>
+                </div>
+            </a>
+
+            <a href="trellis-onboarding-email-sequence.html" class="portfolio-card">
+                <div class="portfolio-card-top">
+                    <span class="portfolio-type type-email">Email Sequence</span>
+                    <h3>5-Email Welcome Sequence That Turned Free Trials Into Teams</h3>
+                    <p class="portfolio-card-desc">Complete behavioral onboarding sequence for a project management SaaS. Includes triggers, A/B subject lines, and full copy.</p>
+                </div>
+                <div class="portfolio-card-bottom">
+                    <span class="portfolio-card-cta">Read Sample &rarr;</span>
+                    <span class="portfolio-card-meta">B2B SaaS &middot; Product-Led Growth</span>
+                </div>
+            </a>
+
+            <a href="clearview-analytics-comparison-landing-page.html" class="portfolio-card">
+                <div class="portfolio-card-top">
+                    <span class="portfolio-type type-landing">Landing Page</span>
+                    <h3>Why Enterprise Teams Are Switching to Clearview Analytics</h3>
+                    <p class="portfolio-card-desc">Comparison landing page for an analytics platform. AIDA framework, competitor table, FAQ section, and conversion-optimized CTAs.</p>
+                </div>
+                <div class="portfolio-card-bottom">
+                    <span class="portfolio-card-cta">Read Sample &rarr;</span>
+                    <span class="portfolio-card-meta">B2B SaaS &middot; Analytics</span>
+                </div>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process">
+    <div class="section-inner fade-in">
+        <span class="section-tag">How It Works</span>
+        <h2>Simple Process. <em>Predictable Results.</em></h2>
+        <p class="section-lead">From brief to published — here's what working with me looks like.</p>
+
+        <div class="process-steps">
+            <div class="process-step">
+                <h3>Discovery Call</h3>
+                <p>15-minute call to discuss your product, audience, and content goals. No fluff, just clarity.</p>
+            </div>
+            <div class="process-step">
+                <h3>Research & Brief</h3>
+                <p>I dive into your niche, competitors, and keywords. You approve the brief before I write a single word.</p>
+            </div>
+            <div class="process-step">
+                <h3>Draft & Delivery</h3>
+                <p>You receive a polished draft in 3&ndash;5 business days. One revision round included.</p>
+            </div>
+            <div class="process-step">
+                <h3>Results</h3>
+                <p>Content that ranks, converts, and makes your marketing team look good.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about-section" id="about">
+    <div class="section-inner fade-in">
+        <span class="section-tag">Who's Behind the Keyboard</span>
+        <h2>Technical Background. <em>Marketing Instinct.</em></h2>
+
+        <div class="about-content">
+            <p>I'm a SaaS copywriter with a technical background in software development, data science, and machine learning. That means I actually understand your product &mdash; not just the marketing buzzwords around it.</p>
+            <p>I use a research-driven process combined with conversion copywriting frameworks to create content that performs. Every piece I write is built to rank, engage, and convert.</p>
+            <p>When I'm not writing, I'm probably building trading algorithms or diving into the latest ML papers.</p>
+        </div>
+
+        <div class="about-tags">
+            <span class="about-tag">CRM & Sales Tools</span>
+            <span class="about-tag">Marketing Automation</span>
+            <span class="about-tag">Analytics & BI</span>
+            <span class="about-tag">DevTools</span>
+            <span class="about-tag">Cybersecurity</span>
+            <span class="about-tag">Project Management</span>
+        </div>
+    </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="cta-final">
+    <h2>Ready to Turn Content Into <em>Growth?</em></h2>
+    <p>Send me your biggest content challenge. I'll reply within 24 hours with a free mini-audit of your current content.</p>
+    <div>
+        <a href="mailto:hello@example.com" class="cta-final-btn">Email Me &rarr;</a>
+        <a href="#portfolio" class="cta-final-btn secondary">View Samples</a>
+    </div>
+    <p class="cta-final-sub">Response within 24h &middot; No commitment &middot; Free content audit</p>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <p>&copy; 2026 &middot; SaaS Copywriter &mdash; SEO Blog Posts, Email Sequences & Landing Pages for B2B Software</p>
+    <p style="margin-top: 0.4rem;">
+        <a href="#services">Services</a> &nbsp;&middot;&nbsp;
+        <a href="#portfolio">Portfolio</a> &nbsp;&middot;&nbsp;
+        <a href="#process">Process</a> &nbsp;&middot;&nbsp;
+        <a href="#about">About</a>
+    </p>
+</footer>
+
+<!-- Scroll reveal -->
+<script>
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>

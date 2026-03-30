@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trellis — 5-Email Onboarding Sequence for Product-Led Growth</title>
+    <meta name="description" content="Complete 5-email onboarding sequence for a B2B project management SaaS. Behavioral triggers, A/B subject lines, and copy you can steal.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300..700;1,9..40,300..700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --ink: #1a1a1a;
+            --ink-light: #4a4a4a;
+            --ink-muted: #7a7a7a;
+            --surface: #faf9f7;
+            --surface-warm: #f3f0eb;
+            --accent: #2d6bc7;
+            --accent-deep: #1d4f9e;
+            --accent-soft: #eef3fb;
+            --border: #e5e0d8;
+            --green: #2a9d6e;
+            --green-soft: #edf8f3;
+            --orange: #c7702d;
+            --orange-soft: #fdf5ee;
+            --red: #c7402d;
+            --red-soft: #fdf0ee;
+            --serif: 'Instrument Serif', Georgia, serif;
+            --sans: 'DM Sans', -apple-system, sans-serif;
+            --mono: 'JetBrains Mono', monospace;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { font-size: 18px; scroll-behavior: smooth; }
+        body {
+            font-family: var(--sans);
+            color: var(--ink);
+            background: var(--surface);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* — NAV — */
+        .nav {
+            position: sticky; top: 0; z-index: 100;
+            background: rgba(250, 249, 247, 0.92);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            padding: 0.8rem 2rem;
+            display: flex; align-items: center; justify-content: space-between;
+        }
+        .nav-logo {
+            font-family: var(--sans); font-weight: 700; font-size: 1.1rem;
+            color: var(--accent); letter-spacing: -0.02em; text-decoration: none;
+        }
+        .nav-logo span { color: var(--ink); }
+        .nav-links { display: flex; gap: 1.5rem; align-items: center; }
+        .nav-links a {
+            font-size: 0.78rem; font-weight: 500;
+            color: var(--ink-light); text-decoration: none;
+            letter-spacing: 0.03em; text-transform: uppercase;
+        }
+        .nav-links a:hover { color: var(--accent); }
+        .nav-cta {
+            background: var(--accent) !important; color: #fff !important;
+            padding: 0.45rem 1rem; border-radius: 6px;
+            font-size: 0.78rem !important; font-weight: 600 !important;
+            transition: background 0.2s;
+        }
+        .nav-cta:hover { background: var(--accent-deep) !important; }
+
+        /* — HERO — */
+        .hero {
+            max-width: 780px; margin: 0 auto;
+            padding: 4rem 2rem 3rem;
+        }
+        .hero-tag {
+            display: inline-block;
+            font-size: 0.72rem; font-weight: 600;
+            text-transform: uppercase; letter-spacing: 0.08em;
+            color: var(--accent); background: var(--accent-soft);
+            padding: 0.3rem 0.8rem; border-radius: 4px;
+            margin-bottom: 1.5rem;
+        }
+        h1 {
+            font-family: var(--serif);
+            font-size: clamp(2.2rem, 5vw, 3.2rem);
+            line-height: 1.15; font-weight: 400;
+            color: var(--ink); margin-bottom: 1.5rem;
+            letter-spacing: -0.02em;
+        }
+        h1 em { font-style: italic; color: var(--accent); }
+        .hero-meta {
+            display: flex; align-items: center; gap: 1rem;
+            font-size: 0.8rem; color: var(--ink-muted);
+            padding-top: 1rem; border-top: 1px solid var(--border);
+        }
+        .hero-meta .dot { width: 3px; height: 3px; background: var(--ink-muted); border-radius: 50%; }
+
+        /* — CONTENT — */
+        .content {
+            max-width: 720px; margin: 0 auto;
+            padding: 0 2rem 4rem;
+        }
+        .content p {
+            margin-bottom: 1.4rem;
+            color: var(--ink-light); font-size: 1rem;
+        }
+        .lead {
+            font-size: 1.15rem !important;
+            color: var(--ink) !important;
+            line-height: 1.75;
+        }
+        h2 {
+            font-family: var(--serif);
+            font-size: 1.75rem; font-weight: 400;
+            line-height: 1.25; color: var(--ink);
+            margin: 3rem 0 1.2rem;
+            letter-spacing: -0.01em;
+        }
+        h3 {
+            font-family: var(--sans);
+            font-size: 1.05rem; font-weight: 600;
+            color: var(--ink); margin: 2rem 0 0.8rem;
+        }
+        strong { color: var(--ink); font-weight: 600; }
+        a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+
+        /* — STAT ROW — */
+        .stat-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 1rem; margin: 2rem 0;
+        }
+        .stat-card {
+            text-align: center; padding: 1.3rem 0.8rem;
+            background: #fff; border: 1px solid var(--border); border-radius: 10px;
+        }
+        .stat-number {
+            font-family: var(--mono); font-size: 1.8rem; font-weight: 500;
+            color: var(--accent); line-height: 1;
+        }
+        .stat-label {
+            font-size: 0.75rem; color: var(--ink-muted);
+            margin-top: 0.4rem; line-height: 1.35;
+        }
+
+        /* — EMAIL CARD — */
+        .email-card {
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            margin: 2.5rem 0;
+            overflow: hidden;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+        }
+        .email-header {
+            padding: 1.2rem 1.5rem;
+            display: flex; align-items: center; justify-content: space-between;
+            border-bottom: 1px solid var(--border);
+        }
+        .email-number {
+            font-family: var(--mono); font-size: 0.72rem; font-weight: 500;
+            color: #fff; padding: 0.25rem 0.6rem;
+            border-radius: 4px; letter-spacing: 0.03em;
+        }
+        .email-number.e1 { background: var(--accent); }
+        .email-number.e2 { background: var(--green); }
+        .email-number.e3 { background: var(--orange); }
+        .email-number.e4 { background: #8b5cf6; }
+        .email-number.e5 { background: var(--red); }
+        .email-goal {
+            font-size: 0.78rem; color: var(--ink-muted);
+            font-weight: 500;
+        }
+        .email-body { padding: 1.5rem; }
+
+        .email-meta-row {
+            display: grid; grid-template-columns: 1fr 1fr;
+            gap: 1rem; margin-bottom: 1.3rem;
+        }
+        .email-meta-block {
+            padding: 0.8rem 1rem;
+            background: var(--surface);
+            border-radius: 8px;
+        }
+        .email-meta-label {
+            font-size: 0.65rem; font-weight: 700;
+            text-transform: uppercase; letter-spacing: 0.06em;
+            color: var(--ink-muted); margin-bottom: 0.35rem;
+        }
+        .email-meta-value {
+            font-size: 0.85rem; color: var(--ink);
+            line-height: 1.4;
+        }
+
+        .subject-lines {
+            background: var(--surface);
+            border-radius: 8px;
+            padding: 0.8rem 1rem;
+            margin-bottom: 1.3rem;
+        }
+        .subject-line {
+            display: flex; align-items: baseline; gap: 0.5rem;
+            margin-bottom: 0.3rem;
+        }
+        .subject-line:last-child { margin-bottom: 0; }
+        .ab-tag {
+            font-family: var(--mono); font-size: 0.65rem; font-weight: 600;
+            color: var(--accent); flex-shrink: 0;
+        }
+        .subject-text {
+            font-size: 0.88rem; font-weight: 600; color: var(--ink);
+        }
+
+        .email-copy {
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            background: #fff;
+        }
+        .email-copy .from-line {
+            font-size: 0.75rem; color: var(--ink-muted);
+            margin-bottom: 1rem; padding-bottom: 0.6rem;
+            border-bottom: 1px dashed var(--border);
+        }
+        .email-copy p {
+            font-size: 0.9rem; color: var(--ink-light);
+            margin-bottom: 0.9rem; line-height: 1.65;
+        }
+        .email-copy p:last-child { margin-bottom: 0; }
+        .email-copy .greeting { color: var(--ink); font-weight: 500; }
+        .email-copy .signature {
+            font-size: 0.82rem; color: var(--ink-muted);
+            margin-top: 1.2rem; padding-top: 0.8rem;
+            border-top: 1px dashed var(--border);
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--accent); color: #fff;
+            padding: 0.7rem 1.5rem; border-radius: 7px;
+            font-weight: 600; font-size: 0.88rem;
+            text-decoration: none; margin: 0.8rem 0;
+            transition: background 0.2s;
+        }
+        .cta-button:hover { background: var(--accent-deep); color: #fff; }
+        .cta-button.green { background: var(--green); }
+        .cta-button.orange { background: var(--orange); }
+        .cta-button.purple { background: #8b5cf6; }
+        .cta-button.red { background: var(--red); }
+
+        .ps-line {
+            font-size: 0.82rem; color: var(--ink-muted);
+            font-style: italic; margin-top: 0.8rem;
+        }
+
+        .email-annotation {
+            padding: 1rem 1.5rem;
+            background: var(--surface-warm);
+            border-top: 1px solid var(--border);
+        }
+        .annotation-label {
+            font-size: 0.65rem; font-weight: 700;
+            text-transform: uppercase; letter-spacing: 0.06em;
+            color: var(--accent); margin-bottom: 0.3rem;
+        }
+        .annotation-text {
+            font-size: 0.82rem; color: var(--ink-light);
+            line-height: 1.55;
+        }
+
+        /* — CALLOUT — */
+        .callout {
+            background: var(--surface-warm);
+            border-left: 3px solid var(--accent);
+            padding: 1.3rem 1.5rem;
+            margin: 2rem 0; border-radius: 0 8px 8px 0;
+        }
+        .callout p { margin-bottom: 0.5rem; font-size: 0.92rem; }
+        .callout p:last-child { margin-bottom: 0; }
+        .callout-label {
+            font-size: 0.72rem; font-weight: 700;
+            text-transform: uppercase; letter-spacing: 0.06em;
+            color: var(--accent); margin-bottom: 0.5rem;
+        }
+
+        /* — TABLE — */
+        .table-wrap {
+            overflow-x: auto; margin: 2rem 0;
+            border: 1px solid var(--border); border-radius: 10px;
+        }
+        table { width: 100%; border-collapse: collapse; font-size: 0.82rem; }
+        thead { background: var(--surface-warm); }
+        th {
+            text-align: left; padding: 0.7rem 0.8rem;
+            font-weight: 600; font-size: 0.7rem;
+            text-transform: uppercase; letter-spacing: 0.04em;
+            color: var(--ink-muted); border-bottom: 1px solid var(--border);
+        }
+        td {
+            padding: 0.65rem 0.8rem;
+            border-bottom: 1px solid var(--border);
+            color: var(--ink-light); vertical-align: top;
+        }
+        tr:last-child td { border-bottom: none; }
+        tbody tr:hover { background: var(--accent-soft); }
+
+        /* — CTA SECTION — */
+        .cta-section {
+            background: var(--ink); color: #fff;
+            padding: 3rem 2.5rem; border-radius: 14px;
+            margin: 3rem 0 2rem; text-align: center;
+        }
+        .cta-section h2 { color: #fff; font-size: 1.6rem; margin: 0 0 0.8rem; }
+        .cta-section p {
+            color: rgba(255,255,255,0.7);
+            max-width: 480px; margin: 0 auto 1.5rem; font-size: 0.95rem;
+        }
+        .cta-final-btn {
+            display: inline-block; background: var(--accent); color: #fff;
+            padding: 0.85rem 2rem; border-radius: 8px;
+            font-weight: 600; font-size: 0.95rem; text-decoration: none;
+            transition: transform 0.2s, background 0.2s;
+        }
+        .cta-final-btn:hover { background: #3b7de0; transform: translateY(-1px); color: #fff; }
+        .cta-sub {
+            font-size: 0.75rem; color: rgba(255,255,255,0.45);
+            margin-top: 0.8rem;
+        }
+
+        /* — FOOTER — */
+        footer {
+            max-width: 680px; margin: 0 auto;
+            padding: 2rem; border-top: 1px solid var(--border);
+            font-size: 0.78rem; color: var(--ink-muted); text-align: center;
+        }
+
+        /* — RESPONSIVE — */
+        @media (max-width: 640px) {
+            html { font-size: 16px; }
+            .hero { padding: 2.5rem 1.2rem 2rem; }
+            .content { padding: 0 1.2rem 3rem; }
+            .nav-links a:not(.nav-cta) { display: none; }
+            .email-meta-row { grid-template-columns: 1fr; }
+            .stat-row { grid-template-columns: 1fr 1fr; }
+            .cta-section { padding: 2rem 1.5rem; }
+            .email-body { padding: 1.2rem; }
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(16px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .hero, .content { animation: fadeUp 0.6s ease-out; }
+    </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+    <a href="#" class="nav-logo">Trellis<span> Playbook</span></a>
+    <div class="nav-links">
+        <a href="#">Product</a>
+        <a href="#">Templates</a>
+        <a href="#">Pricing</a>
+        <a href="#" class="nav-cta">Start Free Trial</a>
+    </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+    <span class="hero-tag">Email Sequence — Product-Led Onboarding</span>
+    <h1>The 5-Email Welcome Sequence That Turned <em>Free Trials Into Teams</em></h1>
+    <div class="hero-meta">
+        <span>Trellis Growth Team</span>
+        <span class="dot"></span>
+        <span>12 min read</span>
+        <span class="dot"></span>
+        <span>March 2026</span>
+    </div>
+</header>
+
+<!-- CONTENT -->
+<div class="content">
+
+    <p class="lead">40–60% of SaaS trial users sign up, open the product once, and never come back. Your onboarding emails are the one channel that follows them outside your product — and for most companies, they're doing almost nothing.</p>
+
+    <p>When we launched Trellis — a project management platform built for fast-moving product teams — our onboarding was a single "Welcome to Trellis!" email with a link to a help center. Trial-to-paid conversion: 4.1%. Industry average, and entirely mediocre.</p>
+
+    <p>We replaced that with a 5-email behavioral sequence over 14 days. Every email has one job, one CTA, and is triggered by what users actually do — not a calendar. Six months later, trial-to-paid conversion hit 11.3%. Here's the entire sequence, copy included, so you can adapt it.</p>
+
+    <div class="stat-row">
+        <div class="stat-card">
+            <div class="stat-number">4x</div>
+            <div class="stat-label">higher open rates<br>vs. standard campaigns</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">5x</div>
+            <div class="stat-label">higher click-through<br>on onboarding emails</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">11.3%</div>
+            <div class="stat-label">trial-to-paid<br>conversion rate</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">14 days</div>
+            <div class="stat-label">full sequence<br>duration</div>
+        </div>
+    </div>
+
+    <h2>Before You Read: The Rules We Followed</h2>
+
+    <p>Every email in this sequence obeys four constraints. Break any one of them and performance collapses:</p>
+
+    <p><strong>1. One email = one objective = one CTA.</strong> The moment you add a second ask, click-through drops by half. If an email tries to teach a feature AND ask for feedback, it does neither well.</p>
+
+    <p><strong>2. Behavioral triggers over time-based drips.</strong> "Send on Day 3" is a guess. "Send when user creates a project but hasn't invited a teammate" is a system. Behavioral emails convert 2–4x higher than calendar-based ones.</p>
+
+    <p><strong>3. Write like a human, not a marketing department.</strong> Every email comes from "Sarah, Head of Product" — a real person with a real reply-to address. Plain text formatting. No hero banners. No six-color HTML template. When users reply (and they do), Sarah's team answers within 2 hours.</p>
+
+    <p><strong>4. Earn the next open.</strong> Each email must deliver standalone value. If users learn something useful even without clicking, they'll open the next one. That compounding trust is what makes Email 5 convert.</p>
+
+    <div class="callout">
+        <div class="callout-label">Context: What Trellis Does</div>
+        <p><strong>Trellis</strong> is a project management platform for product teams — think roadmaps, sprint boards, and cross-team timelines in one workspace. The "aha moment" is when a user creates their first project and invites a teammate. Teams that reach this point within 7 days retain at 4.2x the rate of solo users.</p>
+    </div>
+
+    <!-- ==================== EMAIL 1 ==================== -->
+    <h2>The Sequence</h2>
+
+    <div class="email-card">
+        <div class="email-header">
+            <span class="email-number e1">EMAIL 01</span>
+            <span class="email-goal">Objective: First project created within 1 hour</span>
+        </div>
+        <div class="email-body">
+            <div class="email-meta-row">
+                <div class="email-meta-block">
+                    <div class="email-meta-label">Trigger</div>
+                    <div class="email-meta-value">Immediate — fires on signup completion</div>
+                </div>
+                <div class="email-meta-block">
+                    <div class="email-meta-label">Sent From</div>
+                    <div class="email-meta-value">Sarah Chen, Head of Product</div>
+                </div>
+            </div>
+
+            <div class="subject-lines">
+                <div class="email-meta-label">Subject Lines (A/B)</div>
+                <div class="subject-line">
+                    <span class="ab-tag">A</span>
+                    <span class="subject-text">Your workspace is ready, {{first_name}}</span>
+                </div>
+                <div class="subject-line">
+                    <span class="ab-tag">B</span>
+                    <span class="subject-text">One step to your first project board</span>
+                </div>
+            </div>
+
+            <div class="email-copy">
+                <div class="from-line">From: Sarah Chen &lt;sarah@trellis.pm&gt;</div>
+                <p class="greeting">Hey {{first_name}},</p>
+                <p>Welcome to Trellis. I'm Sarah — I lead product here, and I'll be your guide for the next two weeks.</p>
+                <p>I'll keep this short. Most project tools ask you to configure settings for 20 minutes before you see anything useful. We're going to skip that.</p>
+                <p>Your workspace is already set up. You have one thing to do right now: <strong>create your first project.</strong> It takes about 90 seconds. Pick a real project your team is working on — not a test. You'll get more value that way.</p>
+                <a href="#" class="cta-button">Create Your First Project →</a>
+                <p>That's it. No setup wizard. No 14-step tutorial. Just one board, ready to use.</p>
+                <p>I'll check in tomorrow with a shortcut that saves our teams about 3 hours a week. But first — get that first project going.</p>
+                <div class="signature">
+                    Sarah<br>
+                    Head of Product, Trellis<br>
+                    <em>P.S. Hit reply if you get stuck. I read every message — real inbox, not a black hole.</em>
+                </div>
+            </div>
+        </div>
+        <div class="email-annotation">
+            <div class="annotation-label">Why This Works</div>
+            <div class="annotation-text">The welcome email has the highest open rate of any email you'll ever send (40–60%). We use 100% of that attention on a single, low-friction action — creating a project. No feature tour, no "here's everything you can do." One action, one button. The preview of tomorrow's email ("a shortcut that saves 3 hours/week") creates an open loop that boosts Email 2's open rate by ~15%.</div>
+        </div>
+    </div>
+
+    <!-- ==================== EMAIL 2 ==================== -->
+
+    <div class="email-card">
+        <div class="email-header">
+            <span class="email-number e2">EMAIL 02</span>
+            <span class="email-goal">Objective: Invite first teammate</span>
+        </div>
+        <div class="email-body">
+            <div class="email-meta-row">
+                <div class="email-meta-block">
+                    <div class="email-meta-label">Trigger</div>
+                    <div class="email-meta-value">Behavioral — 24h after user creates first project (not 24h after signup)</div>
+                </div>
+                <div class="email-meta-block">
+                    <div class="email-meta-label">Suppressed If</div>
+                    <div class="email-meta-value">User has already invited a teammate</div>
+                </div>
+            </div>
+
+            <div class="subject-lines">
+                <div class="email-meta-label">Subject Lines (A/B)</div>
+                <div class="subject-line">
+                    <span class="ab-tag">A</span>
+                    <span class="subject-text">The one thing solo users miss</span>
+                </div>
+                <div class="subject-line">
+                    <span class="ab-tag">B</span>
+                    <span class="subject-text">Your project needs a second brain</span>
+                </div>
+            </div>
+
+            <div class="email-copy">
+                <div class="from-line">From: Sarah Chen &lt;sarah@trellis.pm&gt;</div>
+                <p class="greeting">Hey {{first_name}},</p>
+                <p>Nice — your first project is live. Now here's the pattern we see over and over:</p>
+                <p>Users who try Trellis alone think it's "a nice Trello alternative." Users who invite one teammate in the first week say it changed how they run projects. The difference isn't the product — it's that collaboration features only click when there's someone to collaborate with.</p>
+                <p>Here's the shortcut I mentioned: <strong>shared task assignments with real-time status.</strong> When your teammate updates a task, your board updates instantly. No more "hey, where are we on this?" messages in Slack. That's where the 3 hours/week comes from.</p>
+                <p>But it only works if there's a teammate on the board.</p>
+                <a href="#" class="cta-button green">Invite a Teammate (30 seconds) →</a>
+                <p>You can invite by email — they'll see your existing project and be ready to go. No separate onboarding needed.</p>
+                <div class="signature">
+                    Sarah
+                </div>
+            </div>
+        </div>
+        <div class="email-annotation">
+            <div class="annotation-label">Why This Works</div>
+            <div class="annotation-text">This email targets Trellis's activation metric: first teammate invited. Teams retain at 4.2x the rate of solo users. Instead of saying "invite your team!" generically, we connect it to a specific benefit (killing Slack status check-ins). The trigger is behavioral — it only sends after the user has created a project, so the ask is sequenced correctly. Users who already invited someone never see this email.</div>
+        </div>
+    </div>
+
+    <!-- ==================== EMAIL 3 ==================== -->
+
+    <div class="email-card">
+        <div class="email-header">
+            <span class="email-number e3">EMAIL 03</span>
+            <span class="email-goal">Objective: Feature discovery + habit formation</span>
+        </div>
+        <div class="email-body">
+            <div class="email-meta-row">
+                <div class="email-meta-block">
+                    <div class="email-meta-label">Trigger</div>
+                    <div class="email-meta-value">Day 5 post-signup — only if user has logged in at least twice</div>
+                </div>
+                <div class="email-meta-block">
+                    <div class="email-meta-label">Alternate Path</div>
+                    <div class="email-meta-value">If user hasn't logged in since Day 1 → sends re-engagement email instead (not this one)</div>
+                </div>
+            </div>
+
+            <div class="subject-lines">
+                <div class="email-meta-label">Subject Lines (A/B)</div>
+                <div class="subject-line">
+                    <span class="ab-tag">A</span>
+                    <span class="subject-text">How Lattice ships 2x faster with Trellis</span>
+                </div>
+                <div class="subject-line">
+                    <span class="ab-tag">B</span>
+                    <span class="subject-text">The feature most people find on week 3</span>
+                </div>
+            </div>
+
+            <div class="email-copy">
+                <div class="from-line">From: Sarah Chen &lt;sarah@trellis.pm&gt;</div>
+                <p class="greeting">Hey {{first_name}},</p>
+                <p>Quick story. The team at Lattice (42 people, product org) moved to Trellis last quarter. Within a month, their sprint cycle time dropped from 3 weeks to 11 days.</p>
+                <p>The biggest driver wasn't the board — it was <strong>Timeline View.</strong> It shows dependencies across projects on a single screen, so PMs catch bottlenecks before they cascade. Most new users don't discover it until week three. You can try it right now.</p>
+                <a href="#" class="cta-button orange">Switch to Timeline View →</a>
+                <p>Open any project → click "Timeline" in the top nav → drag tasks to set dependencies. Takes about 2 minutes to set up, and you'll immediately see which tasks are blocking others.</p>
+                <p class="ps-line">P.S. If your team is smaller than 10, Timeline is especially powerful because it shows you where one person is a bottleneck across multiple projects. Worth a look.</p>
+                <div class="signature">
+                    Sarah
+                </div>
+            </div>
+        </div>
+        <div class="email-annotation">
+            <div class="annotation-label">Why This Works</div>
+            <div class="annotation-text">Email 3 does two things: introduces a high-retention feature through social proof (Lattice case study), and creates a "depth hook" — a reason to use Trellis for more than basic task management. The P.S. personalizes by team size, which we have from signup. This email only goes to engaged users (2+ logins). Disengaged users get a completely different re-engagement track — sending feature discovery emails to people who haven't even returned would be wasted.</div>
+        </div>
+    </div>
+
+    <!-- ==================== EMAIL 4 ==================== -->
+
+    <div class="email-card">
+        <div class="email-header">
+            <span class="email-number e4">EMAIL 04</span>
+            <span class="email-goal">Objective: Connect an integration (deepen switching cost)</span>
+        </div>
+        <div class="email-body">
+            <div class="email-meta-row">
+                <div class="email-meta-block">
+                    <div class="email-meta-label">Trigger</div>
+                    <div class="email-meta-value">Day 8 post-signup — only if user has ≥1 teammate on board</div>
+                </div>
+                <div class="email-meta-block">
+                    <div class="email-meta-label">Suppressed If</div>
+                    <div class="email-meta-value">User has already connected Slack, GitHub, or Figma</div>
+                </div>
+            </div>
+
+            <div class="subject-lines">
+                <div class="email-meta-label">Subject Lines (A/B)</div>
+                <div class="subject-line">
+                    <span class="ab-tag">A</span>
+                    <span class="subject-text">Trellis + {{detected_tool}} = fewer tabs</span>
+                </div>
+                <div class="subject-line">
+                    <span class="ab-tag">B</span>
+                    <span class="subject-text">Stop copy-pasting between tools</span>
+                </div>
+            </div>
+
+            <div class="email-copy">
+                <div class="from-line">From: Sarah Chen &lt;sarah@trellis.pm&gt;</div>
+                <p class="greeting">Hey {{first_name}},</p>
+                <p>You've been using Trellis for a week now and your board is taking shape. Here's a quick way to make it feel like the center of your workflow instead of another tab to check.</p>
+                <p><strong>Connect one integration.</strong> Our most-used connections:</p>
+                <p>→ <strong>Slack:</strong> Get task updates in the channel where your team already lives. No more "did you see my comment in Trellis?"<br>
+                → <strong>GitHub:</strong> Link PRs to tasks automatically. When a PR merges, the task moves to Done.<br>
+                → <strong>Figma:</strong> Embed design files directly in task cards. Feedback stays in context.</p>
+                <p>Pick the one your team uses most. Setup is two clicks — no API keys, no IT ticket.</p>
+                <a href="#" class="cta-button purple">Browse Integrations →</a>
+                <div class="signature">
+                    Sarah<br>
+                    <em>P.S. Teams with at least one integration active are 67% more likely to be using Trellis 90 days later. It's the stickiest move you can make this week.</em>
+                </div>
+            </div>
+        </div>
+        <div class="email-annotation">
+            <div class="annotation-label">Why This Works</div>
+            <div class="annotation-text">Integrations create switching costs — and switching costs drive retention. This email is timed for Day 8, when users have enough context to see the value of connecting tools. Subject line A uses dynamic insertion of a detected tool from signup data (e.g., if the user's email domain uses Slack, we reference Slack). The P.S. uses a concrete retention stat as social proof — not "integrations are great" but "67% more likely to stay."</div>
+        </div>
+    </div>
+
+    <!-- ==================== EMAIL 5 ==================== -->
+
+    <div class="email-card">
+        <div class="email-header">
+            <span class="email-number e5">EMAIL 05</span>
+            <span class="email-goal">Objective: Convert trial to paid</span>
+        </div>
+        <div class="email-body">
+            <div class="email-meta-row">
+                <div class="email-meta-block">
+                    <div class="email-meta-label">Trigger</div>
+                    <div class="email-meta-value">Day 11 — 3 days before trial expiry</div>
+                </div>
+                <div class="email-meta-block">
+                    <div class="email-meta-label">Variant</div>
+                    <div class="email-meta-value">High-engagement users get "value recap." Low-engagement get "last-chance quick start."</div>
+                </div>
+            </div>
+
+            <div class="subject-lines">
+                <div class="email-meta-label">Subject Lines (A/B)</div>
+                <div class="subject-line">
+                    <span class="ab-tag">A</span>
+                    <span class="subject-text">Your team made {{task_count}} moves this week</span>
+                </div>
+                <div class="subject-line">
+                    <span class="ab-tag">B</span>
+                    <span class="subject-text">3 days left — here's what you'd lose</span>
+                </div>
+            </div>
+
+            <div class="email-copy">
+                <div class="from-line">From: Sarah Chen &lt;sarah@trellis.pm&gt;</div>
+                <p class="greeting">Hey {{first_name}},</p>
+                <p>Quick numbers from your trial so far:</p>
+                <p>→ <strong>{{task_count}} tasks</strong> created across {{project_count}} projects<br>
+                → <strong>{{teammate_count}} teammates</strong> active on your workspace<br>
+                → <strong>{{comment_count}} comments</strong> — conversations that would've been Slack threads</p>
+                <p>Your trial ends in 3 days. Here's what happens:</p>
+                <p><strong>If you upgrade →</strong> everything stays exactly as it is. Your projects, boards, timeline views, integrations — all intact. Plans start at $9/user/month (billed annually), and you only pay for active seats.</p>
+                <p><strong>If you don't →</strong> your workspace goes read-only. Nothing is deleted for 30 days, so you can always come back. But your team loses access to boards and real-time updates.</p>
+                <a href="#" class="cta-button red">See Plans & Upgrade →</a>
+                <p>No pressure, genuinely. If Trellis isn't the right fit, I'd rather you find the tool that is. But if your team is getting value — and {{task_count}} tasks suggests they are — locking it in takes 60 seconds.</p>
+                <div class="signature">
+                    Sarah<br>
+                    <em>P.S. Reply "extend" and I'll add 7 days to your trial. No questions asked. Some teams just need a bit more time, and that's completely fine.</em>
+                </div>
+            </div>
+        </div>
+        <div class="email-annotation">
+            <div class="annotation-label">Why This Works</div>
+            <div class="annotation-text">This is the conversion email, but it doesn't feel like a sales push. Three mechanisms at work: (1) Personalized usage data creates loss aversion — seeing "47 tasks across 3 projects" makes the workspace feel real. (2) Transparent upgrade vs. downgrade comparison respects the user's intelligence. (3) The P.S. extension offer is a conversion safety net — users who reply "extend" convert at 34% after the extension, vs. 0% if they simply lapse. Giving away 7 days costs almost nothing; losing the user costs everything.</div>
+        </div>
+    </div>
+
+    <!-- ==================== SUMMARY TABLE ==================== -->
+
+    <h2>Sequence at a Glance</h2>
+
+    <div class="table-wrap">
+        <table>
+            <thead>
+                <tr>
+                    <th>Email</th>
+                    <th>Trigger</th>
+                    <th>Objective</th>
+                    <th>CTA</th>
+                    <th>KPI Target</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>#1 Welcome</strong></td>
+                    <td>Signup (instant)</td>
+                    <td>First project created</td>
+                    <td>Create Your First Project</td>
+                    <td>60% open · 35% click · 50% create within 1h</td>
+                </tr>
+                <tr>
+                    <td><strong>#2 Team Invite</strong></td>
+                    <td>24h after first project</td>
+                    <td>Invite teammate</td>
+                    <td>Invite a Teammate</td>
+                    <td>45% open · 22% click · 30% invite within 48h</td>
+                </tr>
+                <tr>
+                    <td><strong>#3 Feature + Proof</strong></td>
+                    <td>Day 5 (if ≥2 logins)</td>
+                    <td>Timeline View discovery</td>
+                    <td>Switch to Timeline View</td>
+                    <td>38% open · 18% click · 25% try Timeline</td>
+                </tr>
+                <tr>
+                    <td><strong>#4 Integration</strong></td>
+                    <td>Day 8 (if ≥1 teammate)</td>
+                    <td>Connect Slack/GitHub/Figma</td>
+                    <td>Browse Integrations</td>
+                    <td>35% open · 15% click · 20% connect</td>
+                </tr>
+                <tr>
+                    <td><strong>#5 Conversion</strong></td>
+                    <td>Day 11 (3 days before trial end)</td>
+                    <td>Upgrade to paid</td>
+                    <td>See Plans & Upgrade</td>
+                    <td>50% open · 20% click · 11% trial-to-paid</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- ==================== PRINCIPLES ==================== -->
+
+    <h2>What Makes This Sequence Work (and What to Adapt)</h2>
+
+    <p><strong>The activation metric drives everything.</strong> For Trellis, it's "create a project + invite a teammate within 7 days." Emails 1 and 2 exist solely to hit that milestone. Your activation metric will be different — find it before writing a single subject line.</p>
+
+    <p><strong>Suppression rules matter as much as triggers.</strong> Half the value of this sequence is what it <em>doesn't</em> send. A user who already invited teammates never sees Email 2. A user who already connected Slack never sees Email 4. Sending people emails about actions they've already taken is the fastest way to train them to ignore you.</p>
+
+    <p><strong>Plain text outperforms HTML templates.</strong> We A/B tested styled HTML emails against plain-text-style emails (minimal formatting, no hero images). Plain text won on both open rate (+8%) and click-through (+12%). It reads like a message from a person, not a marketing blast.</p>
+
+    <p><strong>The P.S. is the second-most-read line.</strong> Eye-tracking studies consistently show readers jump from the subject line to the opening sentence to the P.S. We use the P.S. for social proof, urgency, or a secondary hook that doesn't clutter the main CTA.</p>
+
+    <div class="callout">
+        <div class="callout-label">Adapt This To Your Product</div>
+        <p>Replace Trellis's milestones with your own: (1) What's the single action that predicts 90-day retention? Build Emails 1–2 around it. (2) What advanced feature creates "depth" — a reason to stay beyond basic use? That's Email 3. (3) What creates switching costs? (Integrations, imported data, team adoption.) That's Email 4. (4) What personalized data proves the product is working? That's Email 5.</p>
+    </div>
+
+    <!-- CTA -->
+    <div class="cta-section">
+        <h2>Build Sequences That Actually Convert</h2>
+        <p>Trellis gives product teams the boards, timelines, and automations to ship faster — and onboarding that makes it stick from day one.</p>
+        <a href="#" class="cta-final-btn">Start Your Free Trial →</a>
+        <div class="cta-sub">14-day trial · No credit card · Your first project in 90 seconds</div>
+    </div>
+
+</div>
+
+<footer>
+    <span style="display:inline-block;background:#eef3fb;border:1px solid #2d6bc7;color:#2d6bc7;font-size:0.72rem;font-weight:600;padding:0.3rem 0.8rem;border-radius:5px;margin-bottom:0.5rem;">Portfolio Sample</span><br>
+    &copy; 2026 Trellis &middot; Project Management for Product Teams<br>
+    <span style="margin-top: 0.5rem; display: inline-block; font-style: italic;">
+        Written as a portfolio sample &middot; <a href="index.html" style="color:#7a7a7a;text-decoration:underline;text-underline-offset:2px;">Back to Portfolio &rarr;</a>
+    </span>
+</footer>
+
+</body>
+</html>
