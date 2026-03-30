@@ -12,7 +12,7 @@
 I write SEO blog posts, email sequences, and landing pages that help B2B SaaS companies grow organic traffic and turn visitors into paying customers.
 
 ### CTA Button
-[Get a Free Content Audit] → lien vers ton email ou formulaire
+[Get a Free Content Audit] → mailto:jean@saascopyapp.com
 
 ---
 
@@ -54,19 +54,17 @@ Conversion-focused copy for feature pages, lead gen pages, and product launches.
 ### Titre
 **Recent Work**
 
-#### Sample 1: "How [CRM Tool] Reduced Churn by 34% With Automated Onboarding"
+#### Sample 1: "How Retainly Reduced Churn by 34% With Automated Onboarding"
 *2,000-word SEO blog post — B2B SaaS / Customer Success*
-[Read Sample →]
+[Read Sample →](https://saascopyapp.com/retainly-reduce-saas-churn-automated-onboarding.html)
 
 #### Sample 2: "Welcome Email Sequence for a Project Management SaaS"
 *5-email onboarding sequence — B2B SaaS / Product-Led Growth*
-[Read Sample →]
+[Read Sample →](https://saascopyapp.com/trellis-onboarding-email-sequence.html)
 
-#### Sample 3: "Why Enterprise Teams Are Switching to [Analytics Platform]"
+#### Sample 3: "Why Enterprise Teams Are Switching to ClearView Analytics"
 *Comparison landing page — B2B SaaS / Analytics*
-[Read Sample →]
-
-*(Lien vers Google Docs publics avec tes échantillons)*
+[Read Sample →](https://saascopyapp.com/clearview-analytics-comparison-landing-page.html)
 
 ---
 
@@ -123,14 +121,14 @@ When I'm not writing, I'm probably building trading algorithms or diving into th
 Send me a message with your biggest content challenge. I'll reply within 24 hours with a free mini-audit of your current content.
 
 ### CTA
-[Email Me] → ton email
-[View My Upwork Profile] → lien Upwork
+[Email Me] → mailto:jean@saascopyapp.com
+[View My Upwork Profile] → [Upwork profile link]
 
 ---
 
 ## SECTION 9 — Footer
 
-© 2026 | [Ton Prénom] — SaaS Copywriter
+© 2026 | J.B. — SaaS Copywriter
 Built with ☕ and a deep understanding of your ICP.
 
 ---

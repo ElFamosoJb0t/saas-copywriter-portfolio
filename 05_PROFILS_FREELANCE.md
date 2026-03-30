@@ -151,4 +151,4 @@ I help B2B SaaS companies turn content into a growth engine.
 
 With a technical background in software development and data science, I bring something most copywriters can't: I actually understand your product.
 
-Currently taking on 2-3 new clients per month. DM me or visit [lien Carrd] to see samples and get started.
+Currently taking on 2-3 new clients per month. DM me or visit https://saascopyapp.com to see samples and get started.
